@@ -43,4 +43,4 @@ void DoubleVector::appendCharacterVector(CharacterVector& characterVector)
 {
 }
 
-#endif
+endif
