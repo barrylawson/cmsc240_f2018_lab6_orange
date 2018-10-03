@@ -26,6 +26,16 @@ int main()
    std::cout << std::endl;
    std::cout << "----------------" << std::endl;
    std::cout << "CharacterVector:" << std::endl;
+   cv.put('a',0);
+   std::cout << cv.get(0) << std::endl;
+   std::cout << cv.size() << std::endl;
+   try{
+       	std::cout<<cv.get(100)<< std::endl;
+
+      }
+   catch(char* strg){
+        std::cout<<"Caught the exception: "<< strg <<std::endl;
+      }
    std::cout << "----------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -70,8 +80,12 @@ catch (const std::out_of_range& e){
    CharacterVector cv2;
 
    std::cout << std::endl;
-   std::cout << "----------------------------" << std::endl;
+   std::cout << "----------------------------" << std::endl; 
    std::cout << "appended-to CharacterVector:" << std::endl;
+   cv2.appendIntegerVector(iv);
+   std::cout << cv2.get(cv.size() - 1) << std::endl;
+   cv2.appendDoubleVector(dv);
+   std::cout << cv2.get(cv.size() - 1) << std::endl;
    std::cout << "----------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
