@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <stdexcept>
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
@@ -34,7 +36,24 @@ int main()
    std::cout << "-------------" << std::endl;
    std::cout << "DoubleVector:" << std::endl;
    std::cout << "-------------" << std::endl;
+//put tests
+	dv.put(2.,293854);
+	dv.put(4);
+	dv.put(5);
+	dv.put(7., 1);
 
+	std::cout << "Put test: ";
+	for(int i = 0; i < dv.size(); i++) {std::cout << dv.get(i);}
+	std::cout << " [275]" << std::endl;
+
+	std::cout << "Size test: " << dv.size() << " [3]" << std::endl;
+
+try{
+	std::cout << "Get test: " << dv.get(2) << " [5]" << std::endl;	
+}
+catch (const std::out_of_range& e){
+	std::cout << "Out of range exception: " << e.what() << std::endl;
+}
    //-------------------------------------------------------------------------
 
    // using empty IntegerVector, test appending cv & dv from above 
