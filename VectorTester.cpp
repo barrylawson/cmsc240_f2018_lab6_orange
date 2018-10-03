@@ -61,8 +61,12 @@ int main()
    CharacterVector cv2;
 
    std::cout << std::endl;
-   std::cout << "----------------------------" << std::endl;
+   std::cout << "----------------------------" << std::endl; 
    std::cout << "appended-to CharacterVector:" << std::endl;
+   cv2.appendIntegerVector(iv);
+   std::cout << cv2.get(cv.size() - 1) << std::endl;
+   cv2.appendDoubleVector(dv);
+   std::cout << cv2.get(cv.size() - 1) << std::endl;
    std::cout << "----------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
