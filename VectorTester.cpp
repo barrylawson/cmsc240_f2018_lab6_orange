@@ -15,7 +15,9 @@ int main()
 
    std::cout << "--------------" << std::endl;
    std::cout << "IntegerVector:" << std::endl;
-   std::cout << "--------------" << std::endl;
+   iv.put(1,0);
+   std::cout << iv.get(0) << std::endl;
+   std::cout << iv.size() << std::endl;
 
    //-------------------------------------------------------------------------
 
