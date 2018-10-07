@@ -106,6 +106,11 @@ catch (const std::out_of_range& e){
    std::cout << "appended-to DoubleVector:" << std::endl;
    std::cout << "-------------------------" << std::endl;
 
+	dv2.appendIntegerVector(iv);
+	dv2.appendCharacterVector(cv);
+	for(int i = 0; i < dv2.size(); i++){
+		std::cout << dv2.get(i) << std::endl;
+	}
    //-------------------------------------------------------------------------
 
    return 0;
