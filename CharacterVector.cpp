@@ -4,6 +4,7 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
+#include <stdexcept>
 
 CharacterVector::CharacterVector()  {}
 CharacterVector::~CharacterVector() {}
@@ -17,18 +18,18 @@ int CharacterVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 char CharacterVector::get(int index) 
 { 
-   return characterVector.at(index);
-   if (index >= characterVector.size())
-   {
-   	throw "index out_of_range";
+    int size =characterVector.size();
+   if (index >= size)
+   {   throw std::invalid_argument("Out of range");
    }
+   return characterVector.at(index);
 }
 
 // if index is size-legitimate, put the value at that index;
 // otherwise, use push_back to append to the end of the vector
 void CharacterVector::put(char value, int index)
-{
-	if (index < characterVector.size())
+{	int size =characterVector.size();
+	if (index < size)
 	{
 		characterVector.at(index) = value; // puts the value at that index if the index is size-legitimate
 
@@ -47,20 +48,27 @@ void CharacterVector::put(char value)
 // for each integer in integerVector, use static_cast<char> to append as a
 // character to characterVector
 void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
-{
-	for (int i = 0; i < integerVector.size(); ++i)
-	{
-		characterVector.push_back(integerVector.get(i));
+{ 
+
+        int size = integerVector.size();
+        char iv;
+	for (int i = 0; i < size; ++i)
+	{       iv = static_cast<char>(integerVector.get(i));
+                characterVector.push_back(iv);
+//		characterVector.push_back(static_cast<char>(integerVector.get(i)));
 	}
 }
 
 // for each double in doubleVector, use static_cast<char> to append as a
 // character to characterVector
 void CharacterVector::appendDoubleVector(DoubleVector& doubleVector)
-{
-	for (int i = 0; i < doubleVector.size(); ++i)
+{       int size = doubleVector.size();
+        char dv;
+	for (int i = 0; i < size; ++i)
 	{
-		characterVector.push_back(doubleVector.get(i));
+		dv = static_cast<char>(doubleVector.get(i));
+                characterVector.push_back(dv);
+//		characterVector.push_back(static_cast<char>(doubleVector.get(i)));
 
 	}
 }

@@ -36,15 +36,19 @@ int main()
    std::cout << "----------------" << std::endl;
    std::cout << "CharacterVector:" << std::endl;
    cv.put('a',0);
-   std::cout << cv.get(0) << std::endl;
-   std::cout << cv.size() << std::endl;
+   cv.put('b',1);
+   std::cout << "Put test: "<< std::endl;
+   for(int i = 0; i < cv.size(); i++) {
+	std::cout << cv.get(i) << std::endl;
+   }
+   std::cout << "Size test: " << cv.size() << std::endl;
    try{
-       	std::cout<<cv.get(100)<< std::endl;
+       	std::cout << cv.get(100)<< std::endl;
 
       }
-   catch(char* strg){
-        std::cout<<"Caught the exception: "<< strg <<std::endl;
-      }
+   catch(const std::invalid_argument& e){
+        std::cout << "Out of range exception: " << e.what() << std::endl;
+}
    std::cout << "----------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -96,10 +100,17 @@ catch (const std::out_of_range& e){
    std::cout << std::endl;
    std::cout << "----------------------------" << std::endl; 
    std::cout << "appended-to CharacterVector:" << std::endl;
+  
    cv2.appendIntegerVector(iv);
-   std::cout << cv2.get(cv.size() - 1) << std::endl;
+   std::cout << "Size: " << cv2.size() << " [1]" << std::endl;
+   for(int i = 0; i < cv2.size(); i++ ){
+   	std::cout << cv2.get(i) << std::endl;
+   }
    cv2.appendDoubleVector(dv);
-   std::cout << cv2.get(cv.size() - 1) << std::endl;
+   std::cout << "Size: " << cv2.size() << " [4]" << std::endl;
+   for(int i = 0; i < cv2.size(); i++ ){
+        std::cout << cv2.get(i) << std::endl;
+   }
    std::cout << "----------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
@@ -115,9 +126,11 @@ catch (const std::out_of_range& e){
 	dv2.appendIntegerVector(iv);
 	dv2.appendCharacterVector(cv);
 	for(int i = 0; i < dv2.size(); i++){
-		std::cout << dv2.get(i) << std::endl;
+		std::cout << dv2.get(i) << " ";
 	}
-   //-------------------------------------------------------------------------
+	std::cout << std::endl;
+	std::cout << "[1] [97] [98]" << std::endl;
+    //-------------------------------------------------------------------------
 
    return 0;
 }
