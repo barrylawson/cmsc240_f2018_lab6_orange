@@ -4,7 +4,6 @@
 #include "IntegerVector.h"
 #include "DoubleVector.h"
 #include "CharacterVector.h"
-#include <stdexcept>
 
 CharacterVector::CharacterVector()  {}
 CharacterVector::~CharacterVector() {}
@@ -18,10 +17,6 @@ int CharacterVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 char CharacterVector::get(int index) 
 { 
-    int size =characterVector.size();
-   if (index >= size)
-   {   throw std::invalid_argument("Out of range");
-   }
    return characterVector.at(index);
 }
 
