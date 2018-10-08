@@ -18,14 +18,7 @@ int IntegerVector::size()
 // than [] so that an out_of_range error will be thrown for an invalid index
 int IntegerVector::get(int index)  
 { 
- 
-   if (index >= integerVector.size())
-   {
-   	throw "index out_of_range";
-   }
-
-	return integerVector.at(index);	
-  
+    return integerVector.at(index);
 }
 
 // if index is size-legitimate, put the value at that index;

@@ -5,6 +5,7 @@
 #include "DoubleVector.h"
 #include "CharacterVector.h"
 #include <stdexcept>
+#include <vector>
 int main()
 {
    IntegerVector   iv;
@@ -17,15 +18,15 @@ int main()
 
    std::cout << "--------------" << std::endl;
    std::cout << "IntegerVector:" << std::endl;
-   iv.put(1,0);
+   iv.put(76,0);
    std::cout << iv.get(0) << std::endl;
    std::cout << iv.size() << std::endl;
    try{
-	std::cout<<iv.get(100)<<std::endl;
-}
-catch(const std::out_of_range& oor){
-	std:: cerr  << "Out of Range error.";
-}
+	std::cout<<iv.get(2)<<std::endl;
+	}
+   catch(const std::out_of_range& e){
+	std::cout  << "Out of Range error." << e.what() << std::endl;
+	}
 
    //-------------------------------------------------------------------------
 
