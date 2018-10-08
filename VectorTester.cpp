@@ -132,6 +132,7 @@ catch (const std::out_of_range& e){
 		std::cout << dv2.get(i) << " ";
 	}
 	std::cout << std::endl;
+	std::cout << "[78] [97] [98] [99]" << std::endl;
     //-------------------------------------------------------------------------
 
    return 0;
