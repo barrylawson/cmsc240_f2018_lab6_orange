@@ -98,10 +98,16 @@ catch (const std::out_of_range& e){
    std::cout << std::endl;
    std::cout << "----------------------------" << std::endl; 
    std::cout << "appended-to CharacterVector:" << std::endl;
+  
    cv2.appendIntegerVector(iv);
-   cv2.appendDoubleVector(dv);
+   std::cout << "Size: " << cv2.size() << " [1]" << std::endl;
    for(int i = 0; i < cv2.size(); i++ ){
    	std::cout << cv2.get(i) << std::endl;
+   }
+   cv2.appendDoubleVector(dv);
+   std::cout << "Size: " << cv2.size() << " [4]" << std::endl;
+   for(int i = 0; i < cv2.size(); i++ ){
+        std::cout << cv2.get(i) << std::endl;
    }
    std::cout << "----------------------------" << std::endl;
 

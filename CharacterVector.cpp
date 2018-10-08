@@ -48,9 +48,12 @@ void CharacterVector::put(char value)
 // for each integer in integerVector, use static_cast<char> to append as a
 // character to characterVector
 void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
-{
-	for (int i = 0; i < integerVector.size(); ++i)
-	{       char iv = static_cast<char>(integerVector.get(i));
+{ 
+
+        int size = integerVector.size();
+        char iv;
+	for (int i = 0; i < size; ++i)
+	{       iv = static_cast<char>(integerVector.get(i));
                 characterVector.push_back(iv);
 //		characterVector.push_back(static_cast<char>(integerVector.get(i)));
 	}
@@ -59,10 +62,11 @@ void CharacterVector::appendIntegerVector(IntegerVector& integerVector)
 // for each double in doubleVector, use static_cast<char> to append as a
 // character to characterVector
 void CharacterVector::appendDoubleVector(DoubleVector& doubleVector)
-{
-	for (int i = 0; i < doubleVector.size(); ++i)
+{       int size = doubleVector.size();
+        char dv;
+	for (int i = 0; i < size; ++i)
 	{
-		char dv = static_cast<char>(doubleVector.get(i));
+		dv = static_cast<char>(doubleVector.get(i));
                 characterVector.push_back(dv);
 //		characterVector.push_back(static_cast<char>(doubleVector.get(i)));
 
