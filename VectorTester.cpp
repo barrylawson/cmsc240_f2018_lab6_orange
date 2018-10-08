@@ -61,6 +61,11 @@ catch(const std::out_of_range& oor){
    std::cout << std::endl;
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
+   iv2.appendCharacterVector(cv);
+   std::cout << iv2.get(iv.size() - 1) << std::endl;
+   iv2.appendDoubleVector(dv);
+   std::cout << iv2.get(iv.size() - 1) << std::endl;
+   std::cout << "----------------------------" << std::endl;
    std::cout << "--------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
