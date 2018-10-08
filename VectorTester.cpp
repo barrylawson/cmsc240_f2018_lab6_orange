@@ -20,11 +20,13 @@ int main()
    std::cout << "IntegerVector:" << std::endl;
    iv.put(76,0);
    std::cout << iv.get(0) << std::endl;
-   std::cout << "Size test: " << iv.size() << std::endl;
+   std::cout << "Size test: " << iv.size() << std::endl;  
+   try{
+       	std::cout << cv.get(100)<< std::endl;
+      }
    catch(const std::out_of_range& e){
 	std::cout  << "Out of Range error." << e.what() << std::endl;
 	}
->>>>>>> bbe79b4e35213a6dad963ec07937b285d5fdbd38
 
    //-------------------------------------------------------------------------
 
@@ -59,20 +61,19 @@ int main()
    std::cout << "DoubleVector:" << std::endl;
    std::cout << "-------------" << std::endl;
 //put tests
-	dv.put(.293854,0);
-	dv.put(1);
-	dv.put(2.0);
-	dv.put(7.1, 3);
+	dv.put(53.00000,0);
+	dv.put(77.0);
+	dv.put(49.0);
+	dv.put(112.0, 3);
 
 	std::cout << "Put test: ";
-	for(int i = 0; i < dv.size(); i++) {std::cout << dv.get(i);}
-	std::cout << " []" << std::endl;
+	for(int i = 0; i < dv.size(); i++) {std::cout << dv.get(i) << std::endl;}
 
 	std::cout << "Size test: " << dv.size() << " [4]" << std::endl;
 
 try{
-	std::cout << "Get test: " << dv.get(10) << " [5]" << std::endl;	
-}
+	std::cout << "Get test: " << dv.get(10) << " [index out of bound]" << std::endl;	
+}  
 catch (const std::out_of_range& e){
 	std::cout << "Out of range exception: " << e.what() << std::endl;
 }
@@ -85,11 +86,12 @@ catch (const std::out_of_range& e){
    std::cout << "--------------------------" << std::endl;
    std::cout << "appended-to IntegerVector:" << std::endl;
    iv2.appendCharacterVector(cv);
-   std::cout << iv2.get(iv.size() - 1) << std::endl;
    iv2.appendDoubleVector(dv);
-   std::cout << iv2.get(iv.size() - 1) << std::endl;
+   for(int i = 0; i < iv2.size(); i++){
+                std::cout << iv2.get(i) << " ";
+        }
+   std::cout << std::endl;
    std::cout << "----------------------------" << std::endl;
-   std::cout << "--------------------------" << std::endl;
 
    //-------------------------------------------------------------------------
 
@@ -130,7 +132,6 @@ catch (const std::out_of_range& e){
 		std::cout << dv2.get(i) << " ";
 	}
 	std::cout << std::endl;
-	std::cout << "[1] [97] [98]" << std::endl;
     //-------------------------------------------------------------------------
 
    return 0;
