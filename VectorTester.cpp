@@ -124,9 +124,11 @@ catch (const std::out_of_range& e){
 	dv2.appendIntegerVector(iv);
 	dv2.appendCharacterVector(cv);
 	for(int i = 0; i < dv2.size(); i++){
-		std::cout << dv2.get(i) << std::endl;
+		std::cout << dv2.get(i) << " ";
 	}
-   //-------------------------------------------------------------------------
+	std::cout << std::endl;
+	std::cout << "[1] [97] [98]" << std::endl;
+    //-------------------------------------------------------------------------
 
    return 0;
 }
